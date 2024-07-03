@@ -20,11 +20,6 @@ on:
         required: true
         default: true
         type: boolean
-      i386:
-        description: '拉取i386架构'
-        required: true
-        default: false
-        type: boolean
       arm64:
         description: '拉取arm64架构'
         required: true
@@ -32,21 +27,6 @@ on:
         type: boolean
       armv7:
         description: '拉取armv7架构'
-        required: true
-        default: false
-        type: boolean
-      armv6:
-        description: '拉取armv6架构'
-        required: true
-        default: false
-        type: boolean
-      armv5:
-        description: '拉取armv5架构'
-        required: true
-        default: false
-        type: boolean
-      s390x:
-        description: '拉取s390x架构'
         required: true
         default: false
         type: boolean
