@@ -1,7 +1,8 @@
+--platform=linux/arm64 martialbe/one-api:latest
+--platform=linux/arm64 easytier/easytier:latest
 --platform=linux/arm64 snowdreamtech/frpc:latest
 --platform=linux/arm64 snowdreamtech/frps:latest
 --platform=linux/arm64 moelin/1panel:latest
---platform=linux/arm64 martialbe/one-api:latest
 --platform=linux/arm64 ghcr.io/mhsanaei/3x-ui:latest
 --platform=linux/arm64 alireza7/x-ui:latest
 --platform=linux/arm64 lanthora/candy:latest
@@ -26,6 +27,5 @@
 --platform=linux/arm64 mzz2017/v2raya:latest
 --platform=linux/arm64 ghcr.io/element-hq/synapse:latest
 --platform=linux/arm64 vectorim/element-web:latest
---platform=linux/arm64 dokken/debian-11:latest
 --platform=linux/arm64 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
 --platform=linux/arm64 superng6/aria2:webui-latest
