@@ -1,5 +1,4 @@
 --platform=linux/arm64 martialbe/one-api:latest
---platform=linux/arm64 easytier/easytier:latest
 --platform=linux/arm64 snowdreamtech/frpc:latest
 --platform=linux/arm64 snowdreamtech/frps:latest
 --platform=linux/arm64 moelin/1panel:latest
