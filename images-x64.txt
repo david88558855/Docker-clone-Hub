@@ -28,3 +28,4 @@
 --platform=linux/amd64 vectorim/element-web:latest
 --platform=linux/amd64 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
 --platform=linux/amd64 superng6/aria2:webui-latest
+--platform=linux/amd64 easytier/easytier:latest
