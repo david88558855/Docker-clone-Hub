@@ -4,8 +4,6 @@
 --platform=linux/amd64 moelin/1panel:latest
 --platform=linux/amd64 ghcr.io/mhsanaei/3x-ui:latest
 --platform=linux/amd64 alireza7/x-ui:latest
---platform=linux/amd64 lanthora/candy:latest
---platform=linux/amd64 lanthora/cacao:latest
 --platform=linux/amd64 xhofe/alist:latest
 --platform=linux/amd64 liwei2633/gopeed:latest
 --platform=linux/amd64 gdy666/lucky:latest
