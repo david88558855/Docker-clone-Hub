@@ -25,5 +25,4 @@ v2raya
 synapse
 element-web
 certd
-aria2:webui-latest
 easytier
