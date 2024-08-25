@@ -25,5 +25,4 @@
 --platform=linux/arm64 ghcr.io/element-hq/synapse:latest
 --platform=linux/arm64 vectorim/element-web:latest
 --platform=linux/arm64 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
---platform=linux/arm64 superng6/aria2:webui-latest
 --platform=linux/arm64 easytier/easytier:latest
