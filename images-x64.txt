@@ -26,3 +26,6 @@
 --platform=linux/amd64 vectorim/element-web:latest
 --platform=linux/amd64 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
 --platform=linux/amd64 easytier/easytier:latest
+--platform=linux/amd64 gitea/gitea:latest
+--platform=linux/amd64 gitea/act_runner:latest
+--platform=linux/amd64 cp0204/ttdybridge:latest
