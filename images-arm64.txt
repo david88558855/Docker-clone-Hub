@@ -26,3 +26,6 @@
 --platform=linux/arm64 vectorim/element-web:latest
 --platform=linux/arm64 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
 --platform=linux/arm64 easytier/easytier:latest
+--platform=linux/arm64 gitea/gitea:latest
+--platform=linux/arm64 gitea/act_runner:latest
+--platform=linux/arm64 cp0204/ttdybridge:latest
