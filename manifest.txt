@@ -27,4 +27,5 @@ element-web
 certd
 easytier
 gitea
-ttdybridge
+act_runner
+ttydbridge
