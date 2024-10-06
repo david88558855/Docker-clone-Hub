@@ -29,3 +29,5 @@ easytier
 gitea
 act_runner
 ttydbridge
+tao-sync
+nexterm
