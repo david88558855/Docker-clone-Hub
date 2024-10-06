@@ -29,3 +29,5 @@
 --platform=linux/arm64 docker.io/gitea/gitea:latest
 --platform=linux/arm64 docker.io/gitea/act_runner:latest
 --platform=linux/arm64 docker.io/cp0204/ttydbridge:latest
+--platform=linux/arm64 dr34m/tao-sync:latest
+--platform=linux/arm64 germannewsmaker/nexterm:latest
