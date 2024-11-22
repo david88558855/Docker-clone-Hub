@@ -31,3 +31,5 @@
 --platform=linux/arm64 docker.io/cp0204/ttydbridge:latest
 --platform=linux/arm64 dr34m/tao-sync:latest
 --platform=linux/arm64 germannewsmaker/nexterm:latest
+--platform=linux/arm64 jaaksi/sublinkx:latest
+--platform=linux/arm64 snltty/linker-musl:latest
