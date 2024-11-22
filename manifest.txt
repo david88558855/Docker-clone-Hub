@@ -31,3 +31,5 @@ act_runner
 ttydbridge
 tao-sync
 nexterm
+sublinkx
+linker-musl
