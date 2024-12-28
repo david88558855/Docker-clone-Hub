@@ -33,3 +33,5 @@ tao-sync
 nexterm
 sublinkx
 linker-musl
+new-api
+van-nav
