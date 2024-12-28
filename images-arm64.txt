@@ -33,3 +33,5 @@
 --platform=linux/arm64 germannewsmaker/nexterm:latest
 --platform=linux/arm64 jaaksi/sublinkx:latest
 --platform=linux/arm64 snltty/linker-musl:latest
+--platform=linux/arm64 calciumion/new-api:latest
+--platform=linux/arm64 mereith/van-nav:latest
