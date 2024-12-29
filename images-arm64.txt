@@ -35,4 +35,4 @@
 --platform=linux/arm64 snltty/linker-musl:latest
 --platform=linux/arm64 calciumion/new-api:latest
 --platform=linux/arm64 mereith/van-nav:latest
---platform=linux/arm64 linuxserver/mariadb:latest
+--platform=linux/arm64 mariadb:latest
