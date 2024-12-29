@@ -35,3 +35,4 @@ sublinkx
 linker-musl
 new-api
 van-nav
+mariadb
