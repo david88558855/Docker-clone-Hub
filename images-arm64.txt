@@ -35,3 +35,6 @@
 --platform=linux/arm64 snltty/linker-musl:latest
 --platform=linux/arm64 mereith/van-nav:latest
 --platform=linux/arm64 mariadb:latest
+--platform=linux/arm64 unilei/aipan-netdisk-search-simple:latest
+--platform=linux/arm64 wushuo894/ani-rss:latest
+--platform=linux/arm64 ghcr.io/calcium-ion/new-api:latest
