@@ -39,3 +39,4 @@ aipan-netdisk-search-simple
 ani-rss
 new-api
 frp-panel
+gostc
