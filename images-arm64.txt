@@ -39,3 +39,4 @@
 --platform=linux/arm64 wushuo894/ani-rss:latest
 --platform=linux/arm64 ghcr.io/calcium-ion/new-api:latest
 --platform=linux/arm64 vaalacat/frp-panel:latest
+--platform=linux/arm64 harbor.sian.one/gostc/gostc:latest
