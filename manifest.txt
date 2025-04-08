@@ -12,7 +12,6 @@ easynode
 wg-easy
 dockge
 sub
-sub2clash
 sublink
 subweb
 subconverter
