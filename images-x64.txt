@@ -12,7 +12,6 @@
 --platform=linux/amd64 ghcr.io/wg-easy/wg-easy:latest
 --platform=linux/amd64 louislam/dockge:latest
 --platform=linux/amd64 stilleshan/sub:latest
---platform=linux/amd64 ghcr.io/nitezs/sub2clash:latest
 --platform=linux/amd64 jaaksi/sublink:latest
 --platform=linux/amd64 careywong/subweb:latest
 --platform=linux/amd64 tindy2013/subconverter:latest
