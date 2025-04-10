@@ -15,7 +15,6 @@ sub
 sublink
 subweb
 subconverter
-chuanhuchatgpt
 ddns-go
 linux-command
 samba
@@ -38,3 +37,4 @@ aipan-netdisk-search-simple
 ani-rss
 frp-panel
 gostc
+aingdesk
