@@ -15,7 +15,6 @@
 --platform=linux/amd64 jaaksi/sublink:latest
 --platform=linux/amd64 careywong/subweb:latest
 --platform=linux/amd64 tindy2013/subconverter:latest
---platform=linux/amd64 tuchuanhuhuhu/chuanhuchatgpt:latest
 --platform=linux/amd64 jeessy/ddns-go:latest
 --platform=linux/amd64 wcjiang/linux-command:latest
 --platform=linux/amd64 crazymax/samba:latest
@@ -38,3 +37,4 @@
 --platform=linux/amd64 wushuo894/ani-rss:latest
 --platform=linux/amd64 vaalacat/frp-panel:latest
 --platform=linux/amd64 harbor.sian.one/gostc/gostc:latest
+--platform=linux/amd64 aingdesk/aingdesk:latest
