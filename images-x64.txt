@@ -38,3 +38,4 @@
 --platform=linux/amd64 vaalacat/frp-panel:latest
 --platform=linux/amd64 harbor.sian.one/gostc/gostc:latest
 --platform=linux/amd64 aingdesk/aingdesk:latest
+--platform=linux/amd64 krytro/aiaw:latest
