@@ -38,3 +38,4 @@ ani-rss
 frp-panel
 gostc
 aingdesk
+aiaw
