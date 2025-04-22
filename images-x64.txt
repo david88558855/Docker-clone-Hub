@@ -37,5 +37,9 @@
 --platform=linux/amd64 wushuo894/ani-rss:latest
 --platform=linux/amd64 vaalacat/frp-panel:latest
 --platform=linux/amd64 harbor.sian.one/gostc/gostc:latest
+--platform=linux/amd64 jiangrui1994/cloudsaver:latest
+--platform=linux/amd64 jeessy/backup-x:latest
+--platform=linux/amd64 linkease/kspeeder:latest
 --platform=linux/amd64 aingdesk/aingdesk:latest
 --platform=linux/amd64 krytro/aiaw:latest
+--platform=linux/amd64 bestzwei/libretv:latest
