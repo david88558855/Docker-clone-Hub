@@ -37,5 +37,9 @@ aipan-netdisk-search-simple
 ani-rss
 frp-panel
 gostc
+cloudsaver
+backup-x
+kspeeder
 aingdesk
 aiaw
+libretv
