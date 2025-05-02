@@ -52,7 +52,7 @@ jobs:
             # 分离镜像的基础名称
             IMAGE_NAME=$(echo "$SOURCE_IMAGE" | cut -d':' -f1)  # 提取镜像名称（忽略标签）
 
-            # 构造目标镜像名称，固定标签为 `arm64`
+            # 构造目标镜像名称，固定标签为 `x64`
             TARGET_IMAGE="${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/$(basename "$IMAGE_NAME"):x64"
 
             # 输出处理信息
