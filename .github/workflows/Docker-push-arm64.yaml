@@ -15,47 +15,69 @@ on:
     workflows: ["Docker-push-x64"]
     types:
       - completed
+
 env:
   DOCKER_REGISTRY: "${{ secrets.DOCKER_REGISTRY }}"
-  DOCKER_NAME_SPACE: "${{ secrets.DOCKER_NAME_SPACE }}"
+  DOCKER_NAMESPACE: "${{ secrets.DOCKER_NAMESPACE }}"
   DOCKER_REGISTRY_USER: "${{ secrets.DOCKER_REGISTRY_USER }}"
   DOCKER_REGISTRY_PASSWORD: "${{ secrets.DOCKER_REGISTRY_PASSWORD }}"
 
 jobs:
-
-  build:
-    name: Pull
+  process-images:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Docker Setup Buildx
-      uses: docker/setup-buildx-action@v3
+      # Step 1: 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Build and push image
-      run: |
-        docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY
-        while IFS= read -r line; do
-          [[ -z "$line" ]] && continue
-          echo "docker pull $line"
-          docker pull $line
-          platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
-          echo "platform is $platform"
-          # 如果存在架构信息 将架构信息拼到TAG名称之后
-          if [ -z "$platform" ]; then
-              platform_prefix=""
-          else
-              platform_prefix="_${platform//\//_}"
+      # Step 2: 登录 Docker
+      - name: Log in to Docker Registry
+        run: |
+          docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY
+      # Step 3: 处理镜像列表
+      - name: Process images from images.txt
+        run: |
+          # 检查 images.txt 文件是否存在
+          if [[ ! -f "images.txt" ]]; then
+            echo "Error: images.txt file not found in the repository root!"
+            exit 1
           fi
-          echo "platform_prefix is $platform_prefix"
-          # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
-          image=$(echo "$line" | awk '{print $NF}')
-          # 获取 镜像名:版本号  例如nginx:1.25.3
-          image_name=$(echo "$image" | awk -F'[/:]' '{print $(NF-1)}')
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/$image_name:arm64"
-          echo "docker tag $image $new_image"
-          docker tag $image $new_image
-          echo "docker push $new_image"
-          docker push $new_image
-        done < images-arm64.txt
+
+          echo "Found images.txt file. Begin processing..."
+
+          # 逐行读取文件内容并处理每个镜像
+          while IFS= read -r SOURCE_IMAGE; do
+            # 跳过空行或无效行
+            if [[ -z "$SOURCE_IMAGE" || "${SOURCE_IMAGE:0:1}" == "#" ]]; then
+              continue
+            fi
+
+            # 分离镜像的基础名称
+            IMAGE_NAME=$(echo "$SOURCE_IMAGE" | cut -d':' -f1)  # 提取镜像名称（忽略标签）
+
+            # 构造目标镜像名称，固定标签为 `arm64`
+            TARGET_IMAGE="${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/$(basename "$IMAGE_NAME"):arm64"
+
+            # 输出处理信息
+            echo "========================================="
+            echo "Processing source image: $SOURCE_IMAGE"
+            echo "Target image: $TARGET_IMAGE"
+
+            # 拉取源镜像，指定平台为 linux/arm64
+            if ! docker pull --platform=linux/arm64 "$SOURCE_IMAGE"; then
+              echo "Error: Failed to pull image $SOURCE_IMAGE. Skipping..."
+              continue
+            fi
+
+            # 重命名镜像到目标仓库
+            docker tag "$SOURCE_IMAGE" "$TARGET_IMAGE"
+
+            # 推送镜像到目标仓库
+            if docker push "$TARGET_IMAGE"; then
+              echo "Successfully mirrored: $SOURCE_IMAGE -> $TARGET_IMAGE"
+            else
+              echo "Error: Failed to push image $TARGET_IMAGE. Skipping..."
+            fi
+            echo "========================================="
+          done < images.txt
