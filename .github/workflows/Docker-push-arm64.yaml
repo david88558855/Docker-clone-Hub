@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: '请填写Docker仓库名称，默认仓库david88558855/Docker-clone'
+        description: '请填写Docker仓库名称，默认仓库david88558855/Docker-clone-Hub'
         required: true
-        default: 'david88558855/Docker-clone'
+        default: 'david88558855/Docker-clone-Hub'
       tag:
         description: '请填写仓库的分支或提交记录，默认主分支master'
         required: true
