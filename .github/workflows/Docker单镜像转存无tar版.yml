@@ -37,7 +37,7 @@ env:
   DOCKER_REGISTRY: "${{ secrets.DOCKER_REGISTRY }}" 
 
   #仓库名字 
-  DOCKER_NAME_SPACE: "${{ secrets.DOCKER_NAME_SPACE }}"  
+  DOCKER_NAMESPACE: "${{ secrets.DOCKER_NAMESPACE }}"  
 
   #仓库账户 例如 abc@email.com
   DOCKER_REGISTRY_USER: "${{ secrets.DOCKER_REGISTRY_USER }}"
@@ -86,7 +86,7 @@ jobs:
       if: github.event.inputs.amd64 == 'true'
       run: |
           docker pull --platform=linux/amd64 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:x64"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:x64"
           echo "将拉取的$line x86_64架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -99,7 +99,7 @@ jobs:
       if: github.event.inputs.i386 == 'true'
       run: |
           docker pull --platform=linux/i386 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:i386"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:i386"
           echo "将拉取的$line i386架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -112,7 +112,7 @@ jobs:
       if: github.event.inputs.arm64 == 'true'
       run: |
           docker pull --platform=linux/arm64 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:arm64"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:arm64"
           echo "将拉取的$line arm64架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -125,7 +125,7 @@ jobs:
       if: github.event.inputs.armv7 == 'true'
       run: |
           docker pull --platform=linux/arm/v7 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:armv7"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:armv7"
           echo "将拉取的$line armv7架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -138,7 +138,7 @@ jobs:
       if: github.event.inputs.armv6 == 'true'
       run: |
           docker pull --platform=linux/arm/v6 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:armv6"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:armv6"
           echo "将拉取的$line armv6架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -151,7 +151,7 @@ jobs:
       if: github.event.inputs.armv5 == 'true'
       run: |
           docker pull --platform=linux/arm/v5 $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:armv5"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:armv5"
           echo "将拉取的$line armv5架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -164,7 +164,7 @@ jobs:
       if: github.event.inputs.s390x == 'true'
       run: |
           docker pull --platform=linux/s390x $line
-          new_image="$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:s390x"
+          new_image="$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:s390x"
           echo "将拉取的$line s390x架构镜像更名为 $new_image"
           docker tag $line $new_image
           echo "将更名后的镜像$new_image 推送到Docker仓库"
@@ -185,16 +185,16 @@ jobs:
           echo "$ARMV6"
           echo "$ARMV5"
           echo "$S390X"
-          echo "到$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/$image_name_tag"
-          docker manifest create $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/$image_name_tag $AMD64 $I386 $ARM64 $ARMV7 $ARMV6 $ARMV5 $S390X
-          docker manifest push $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/$image_name_tag
-          docker manifest rm $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/$image_name_tag
+          echo "到$DOCKER_REGISTRY/$DOCKER_NAMESPACE/$image_name_tag"
+          docker manifest create $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$image_name_tag $AMD64 $I386 $ARM64 $ARMV7 $ARMV6 $ARMV5 $S390X
+          docker manifest push $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$image_name_tag
+          docker manifest rm $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$image_name_tag
 
           if [[ -n "$name" ]] && [[ "$name" != "$image_tag" ]] ; then
-             echo "再合并到$DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:$name"
-             docker manifest create $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:$name $AMD64 $I386 $ARM64 $ARMV7 $ARMV6 $ARMV5 $S390X
-             docker manifest push $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:$name
-             docker manifest rm $DOCKER_REGISTRY/$DOCKER_NAME_SPACE/${image_name}:$name
+             echo "再合并到$DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:$name"
+             docker manifest create $DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:$name $AMD64 $I386 $ARM64 $ARMV7 $ARMV6 $ARMV5 $S390X
+             docker manifest push $DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:$name
+             docker manifest rm $DOCKER_REGISTRY/$DOCKER_NAMESPACE/${image_name}:$name
           fi
 
           sudo rm -rf /home/runner/.docker/
