@@ -43,3 +43,4 @@ linkease/kspeeder:latest
 aingdesk/aingdesk:latest
 krytro/aiaw:latest
 bestzwei/libretv:latest
+dpanel/dpanel:lite
