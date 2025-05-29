@@ -43,3 +43,4 @@ kspeeder
 aingdesk
 aiaw
 libretv
+dpanel
