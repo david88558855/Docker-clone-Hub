@@ -23,7 +23,7 @@ mzz2017/v2raya:latest
 ghcr.io/element-hq/synapse:latest
 vectorim/element-web:latest
 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
-lmq8267/easytier:latest
+easytier/easytier:latest
 docker.io/gitea/gitea:latest
 docker.io/gitea/act_runner:latest
 docker.io/cp0204/ttydbridge:latest
