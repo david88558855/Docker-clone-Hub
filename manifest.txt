@@ -37,6 +37,7 @@ aipan-netdisk-search-simple
 ani-rss
 frp-panel
 gostc
+gostc-admin
 cloudsaver
 backup-x
 kspeeder
