@@ -37,6 +37,7 @@ unilei/aipan-netdisk-search-simple:latest
 wushuo894/ani-rss:latest
 vaalacat/frp-panel:latest
 harbor.sian.one/gostc/gostc:latest
+sianhh/gostc-admin:latest
 jiangrui1994/cloudsaver:latest
 jeessy/backup-x:latest
 linkease/kspeeder:latest
