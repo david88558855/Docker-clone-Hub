@@ -4,7 +4,6 @@ snowdreamtech/frps:latest
 moelin/1panel:latest
 ghcr.io/mhsanaei/3x-ui:latest
 alireza7/x-ui:latest
-xhofe/alist:latest
 liwei2633/gopeed:latest
 gdy666/lucky:latest
 fs185085781/webos:latest
