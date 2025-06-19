@@ -4,7 +4,6 @@ frps
 1panel
 3x-ui
 x-ui
-alist
 gopeed
 lucky
 webos
