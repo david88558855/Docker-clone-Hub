@@ -46,3 +46,4 @@ libretv
 dpanel
 moontv
 mtranserver
+openlist
