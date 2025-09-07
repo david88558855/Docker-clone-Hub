@@ -47,3 +47,4 @@ dpanel
 moontv
 mtranserver
 openlist
+zurl
