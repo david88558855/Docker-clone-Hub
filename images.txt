@@ -46,5 +46,4 @@ bestzwei/libretv:latest
 dpanel/dpanel:lite
 ghcr.io/senshinya/moontv:latest
 xxnuo/mtranserver:latest
-openlistteam/openlist:latest
 helloz/zurl:latest
