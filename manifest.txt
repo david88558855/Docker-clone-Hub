@@ -19,7 +19,6 @@ linux-command
 samba
 zerotier-aio-zh
 v2raya
-synapse
 element-web
 certd
 easytier
