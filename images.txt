@@ -19,7 +19,6 @@ wcjiang/linux-command:latest
 crazymax/samba:latest
 niliaerith/zerotier-aio-zh:latest
 mzz2017/v2raya:latest
-ghcr.io/element-hq/synapse:latest
 vectorim/element-web:latest
 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
 easytier/easytier:latest
