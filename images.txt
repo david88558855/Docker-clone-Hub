@@ -1,7 +1,6 @@
 martialbe/one-api:latest
 snowdreamtech/frpc:latest
 snowdreamtech/frps:latest
-moelin/1panel:latest
 ghcr.io/mhsanaei/3x-ui:latest
 alireza7/x-ui:latest
 liwei2633/gopeed:latest
