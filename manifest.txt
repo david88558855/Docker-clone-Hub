@@ -46,3 +46,5 @@ moontv
 mtranserver
 zurl
 homebox
+chromium
+foxel
