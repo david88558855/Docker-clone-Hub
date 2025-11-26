@@ -46,3 +46,5 @@ ghcr.io/senshinya/moontv:latest
 xxnuo/mtranserver:latest
 helloz/zurl:latest
 xgheaven/homebox:latest
+linuxserver/chromium:latest
+ghcr.io/drizzletime/foxel:latest
