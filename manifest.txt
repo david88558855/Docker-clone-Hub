@@ -50,3 +50,4 @@ chromium
 foxel
 kvmd
 s-ui
+komari
