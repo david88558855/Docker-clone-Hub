@@ -48,3 +48,4 @@ zurl
 homebox
 chromium
 foxel
+kvmd
