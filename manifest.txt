@@ -49,3 +49,4 @@ homebox
 chromium
 foxel
 kvmd
+s-ui
