@@ -50,3 +50,4 @@ linuxserver/chromium:latest
 ghcr.io/drizzletime/foxel:latest
 silentwind0/kvmd:latest
 alireza7/s-ui:latest
+ghcr.io/komari-monitor/komari:latest
