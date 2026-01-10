@@ -20,7 +20,6 @@ zerotier-aio-zh
 v2raya
 element-web
 certd
-easytier
 gitea
 act_runner
 ttydbridge
