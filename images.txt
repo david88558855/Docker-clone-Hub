@@ -15,7 +15,6 @@ careywong/subweb:latest
 tindy2013/subconverter:latest
 jeessy/ddns-go:latest
 wcjiang/linux-command:latest
-crazymax/samba:latest
 mzz2017/v2raya:latest
 vectorim/element-web:latest
 registry.cn-shenzhen.aliyuncs.com/handsfree/certd:latest
