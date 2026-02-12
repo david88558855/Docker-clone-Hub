@@ -15,8 +15,6 @@ subweb
 subconverter
 ddns-go
 linux-command
-samba
-zerotier-aio-zh
 v2raya
 element-web
 certd
