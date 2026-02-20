@@ -39,7 +39,7 @@ aingdesk/aingdesk:latest
 krytro/aiaw:latest
 bestzwei/libretv:latest
 dpanel/dpanel:lite
-ghcr.io/senshinya/moontv:latest
+ghcr.io/samqin123/moontv:latest
 xxnuo/mtranserver:latest
 helloz/zurl:latest
 xgheaven/homebox:latest
