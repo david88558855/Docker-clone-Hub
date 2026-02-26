@@ -48,3 +48,4 @@ foxel
 kvmd
 s-ui
 komari
+omnibox
