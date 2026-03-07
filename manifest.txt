@@ -49,3 +49,4 @@ kvmd
 s-ui
 komari
 omnibox
+hubproxy
