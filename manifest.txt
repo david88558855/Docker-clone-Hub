@@ -1,6 +1,4 @@
 one-api
-frpc
-frps
 3x-ui
 x-ui
 gopeed
