@@ -5,8 +5,6 @@ gopeed
 lucky
 webos
 easynode
-wg-easy
-dockge
 sub
 sublink
 subweb
