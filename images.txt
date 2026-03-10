@@ -5,8 +5,6 @@ liwei2633/gopeed:latest
 gdy666/lucky:v2
 fs185085781/webos:latest
 chaoszhu/easynode:latest
-ghcr.io/wg-easy/wg-easy:latest
-louislam/dockge:latest
 stilleshan/sub:latest
 jaaksi/sublink:latest
 careywong/subweb:latest
