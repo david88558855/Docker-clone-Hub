@@ -37,7 +37,6 @@ libretv
 dpanel
 moontv
 mtranserver
-zurl
 homebox
 chromium
 foxel
