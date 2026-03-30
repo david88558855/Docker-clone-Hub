@@ -40,7 +40,7 @@ mtranserver
 homebox
 chromium
 foxel
-/one-kvm
+one-kvm
 s-ui
 komari
 omnibox
