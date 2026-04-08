@@ -2,7 +2,7 @@ martialbe/one-api:latest
 ghcr.io/mhsanaei/3x-ui:latest
 alireza7/x-ui:latest
 liwei2633/gopeed:latest
-gdy666/lucky:v2
+gdy666/lucky:v3
 fs185085781/webos:latest
 chaoszhu/easynode:latest
 stilleshan/sub:latest
