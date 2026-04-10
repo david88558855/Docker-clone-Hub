@@ -43,5 +43,5 @@ foxel
 one-kvm
 s-ui
 komari
-omnibox
+moontvplus
 hubproxy
