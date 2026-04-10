@@ -43,5 +43,5 @@ ghcr.io/drizzletime/foxel:latest
 silentwind0/one-kvm:latest
 alireza7/s-ui:latest
 ghcr.io/komari-monitor/komari:latest
-lampon/omnibox:latest
+ghcr.io/mtvpls/moontvplus:latest
 ghcr.io/sky22333/hubproxy:latest
