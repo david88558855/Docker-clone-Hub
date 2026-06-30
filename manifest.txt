@@ -2,7 +2,6 @@ one-api
 3x-ui
 x-ui
 gopeed
-lucky
 webos
 easynode
 sub
