@@ -44,3 +44,4 @@ alireza7/s-ui:latest
 ghcr.io/komari-monitor/komari:latest
 ghcr.io/mtvpls/moontvplus:latest
 ghcr.io/sky22333/hubproxy:latest
+ghcr.io/zerx-lab/fluxdown-server:latest
