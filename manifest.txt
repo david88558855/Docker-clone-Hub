@@ -44,3 +44,4 @@ s-ui
 komari
 moontvplus
 hubproxy
+fluxdown-server
