@@ -45,3 +45,4 @@ komari
 moontvplus
 hubproxy
 fluxdown-server
+easyfrpc
