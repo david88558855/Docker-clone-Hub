@@ -46,3 +46,7 @@ ghcr.io/mtvpls/moontvplus:latest
 ghcr.io/sky22333/hubproxy:latest
 ghcr.io/zerx-lab/fluxdown-server:latest
 sianhh/easyfrpc:latest
+0nlylty/dockercopilot:latest
+ghcr.io/coracoo/dockports:latest
+1467078763/metapi:latest
+gdy666/lucky:latest
