@@ -46,3 +46,7 @@ moontvplus
 hubproxy
 fluxdown-server
 easyfrpc
+dockercopilot
+dockports
+metapi
+lucky
