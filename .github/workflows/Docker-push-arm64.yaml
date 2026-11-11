@@ -8,9 +8,9 @@ on:
         required: true
         default: 'david88558855/Docker-clone-Hub'
       tag:
-        description: '请填写仓库的分支或提交记录，默认主分支master'
+        description: '请填写仓库的分支或提交记录，默认主分支mian'
         required: true
-        default: 'master'
+        default: 'mian'
   workflow_run:
     workflows: ["Docker-push-x64"]
     types:
