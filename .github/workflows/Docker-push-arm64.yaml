@@ -1,12 +1,20 @@
 name: Docker-push-arm64
 
+# 修复说明：
+# 原版用 docker pull --platform=linux/arm64 + tag + push。在 amd64 的 runner 上
+# 跨架构拉取时，Docker 会保留源镜像完整的 OCI index（含 provenance/SBOM
+# attestation），push 到阿里云 ACR 时被拒：
+#   error from registry: unknown manifest class for application/vnd.oci.empty.v1+json
+# 改用 skopeo copy --override-arch 只搬运 linux/arm64 单个平台的镜像清单与层，
+# unknown/unknown 的 attestation 不会被选中，推到 :arm64 的是干净的单架构镜像。
+
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: '请填写Docker仓库名称，默认仓库david88558855/Docker-clone-Hub'
+        description: '请填写Docker仓库名称，默认仓库david88558855/Docker-clone-ALIYUN'
         required: true
-        default: 'david88558855/Docker-clone-Hub'
+        default: 'david88558855/Docker-clone-ALIYUN'
       tag:
         description: '请填写仓库的分支或提交记录，默认主分支mian'
         required: true
@@ -31,11 +39,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: 登录 Docker
+      # Step 2: 登录 Docker Registry
+      # 凭证写入 ~/.docker/config.json，skopeo 会读取它完成目标仓库认证
       - name: Log in to Docker Registry
+        run: echo "$DOCKER_REGISTRY_PASSWORD" | docker login "$DOCKER_REGISTRY" -u "$DOCKER_REGISTRY_USER" --password-stdin
+
+      # Step 3: 确保 skopeo 可用
+      - name: Ensure skopeo
         run: |
-          docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY
-      # Step 3: 处理镜像列表
+          if ! command -v skopeo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y skopeo
+          fi
+          skopeo --version
+
+      # Step 4: 处理镜像列表
       - name: Process images from images.txt
         run: |
           # 检查 images.txt 文件是否存在
@@ -47,7 +65,10 @@ jobs:
           echo "Found images.txt file. Begin processing..."
 
           # 逐行读取文件内容并处理每个镜像
-          while IFS= read -r SOURCE_IMAGE; do
+          while IFS= read -r SOURCE_IMAGE || [[ -n "$SOURCE_IMAGE" ]]; do
+            # 兼容 Windows 换行符
+            SOURCE_IMAGE=$(echo "$SOURCE_IMAGE" | tr -d '\r')
+
             # 跳过空行或无效行
             if [[ -z "$SOURCE_IMAGE" || "${SOURCE_IMAGE:0:1}" == "#" ]]; then
               continue
@@ -64,20 +85,14 @@ jobs:
             echo "Processing source image: $SOURCE_IMAGE"
             echo "Target image: $TARGET_IMAGE"
 
-            # 拉取源镜像，指定平台为 linux/arm64
-            if ! docker pull --platform=linux/arm64 "$SOURCE_IMAGE"; then
-              echo "Error: Failed to pull image $SOURCE_IMAGE. Skipping..."
-              continue
-            fi
-
-            # 重命名镜像到目标仓库
-            docker tag "$SOURCE_IMAGE" "$TARGET_IMAGE"
-
-            # 推送镜像到目标仓库
-            if docker push "$TARGET_IMAGE"; then
+            # 只搬运 linux/arm64 这一个平台的镜像清单与层。
+            # attestation 的 platform 是 unknown/unknown，不会被 --override-arch 选中，
+            # 因此不会把 ACR 不认识的 application/vnd.oci.empty.v1+json 推上去。
+            if skopeo copy --override-os linux --override-arch arm64 \
+                 "docker://$SOURCE_IMAGE" "docker://$TARGET_IMAGE"; then
               echo "Successfully mirrored: $SOURCE_IMAGE -> $TARGET_IMAGE"
             else
-              echo "Error: Failed to push image $TARGET_IMAGE. Skipping..."
+              echo "Error: Failed to mirror $SOURCE_IMAGE. Skipping..."
             fi
             echo "========================================="
           done < images.txt
